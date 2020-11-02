@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from bus_navigation.views import station_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', station_view, name='stations')
 ]

@@ -8,11 +8,11 @@ class Station(models.Model):
     name = models.CharField(max_length=50)
 
     def __str__(self):
-        return f'Station {self.name}'
+        return f'{self.name}'
 
 
 class Route(models.Model):
     name = models.CharField(max_length=50)
 
     def __str__(self):
-        return f'Route number {self.name}'
+        return f'{self.name}'
