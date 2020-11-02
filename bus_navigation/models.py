@@ -4,9 +4,15 @@ from django.db import models
 class Station(models.Model):
     latitude = models.FloatField()
     longitude = models.FloatField()
-    routes = models.ManyToManyField(related_name='stations')
+    routes = models.ManyToManyField('Route', related_name='stations', blank=True, null=True)
     name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return f'Station {self.name}'
 
 
 class Route(models.Model):
     name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return f'Route number {self.name}'
